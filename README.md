@@ -1,0 +1,2 @@
+# inventario-ropa
+inventario ropa
