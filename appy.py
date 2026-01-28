@@ -107,7 +107,7 @@ def init_connection():
 def load_inventory_data():
     """Carga datos del inventario"""
     try:
-        df = conn.read("Inventario Ropa Caballero", "Sheet1")
+        df = conn.read("Inventario_Negocio", "Sheet1")
         
         if df.empty or 'ID' not in df.columns:
             df = pd.DataFrame(columns=[
@@ -130,7 +130,7 @@ def load_inventory_data():
 def save_inventory_data(df):
     """Guarda datos en Google Sheets"""
     try:
-        success = conn.update("Inventario Ropa Caballero", "Sheet1", df)
+        success = conn.update("Inventario_Negocio", "Sheet1", df)
         if success:
             st.session_state.last_update = datetime.now()
             st.success("✅ Datos guardados")
